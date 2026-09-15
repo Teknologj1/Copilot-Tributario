@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<enviNFe xmlns="http://www.portalfiscal.inf.br/nfe" versao="4.00">
+  <NFe><infNFe versao="4.00">
+    <ide><mod>55</mod><nNF>10</nNF><dhEmi>2026-03-05T10:00:00-03:00</dhEmi><tpNF>1</tpNF></ide>
+    <emit><CNPJ>12345678000195</CNPJ><xNome>PADARIA MODELO LTDA</xNome>
+      <enderEmit><UF>SP</UF></enderEmit><CRT>1</CRT></emit>
+    <dest><CNPJ>98765432000198</CNPJ></dest>
+    <total><ICMSTot><vNF>80000.00</vNF></ICMSTot></total>
+  </infNFe></NFe>
+  <NFe><infNFe versao="4.00">
+    <ide><mod>55</mod><nNF>11</nNF><dhEmi>2026-03-08T10:00:00-03:00</dhEmi><tpNF>1</tpNF></ide>
+    <emit><CNPJ>98765432000198</CNPJ><xNome>MERCADO CLIENTE SA</xNome>
+      <enderEmit><UF>RJ</UF></enderEmit><CRT>3</CRT></emit>
+    <dest><CPF>11144477735</CPF></dest>
+    <total><ICMSTot><vNF>20000.00</vNF></ICMSTot></total>
+  </infNFe></NFe>
+</enviNFe>
