@@ -1,0 +1,9 @@
+node_modules/
+dist/
+coverage/
+.env
+.env.local
+*.log
+/tmp-laudos/
+/armazenamento-local/
+exemplo-laudo.pdf

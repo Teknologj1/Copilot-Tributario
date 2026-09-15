@@ -1,0 +1,40 @@
+{
+  "name": "copiloto-da-reforma",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Copiloto da Reforma — piloto (Fases 0-1): intake via WhatsApp, parsing fiscal, simulacao dentro/fora do DAS e laudo em PDF.",
+  "license": "UNLICENSED",
+  "type": "commonjs",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/server.js",
+    "dev": "tsx watch src/server.ts",
+    "worker": "tsx src/fila/worker.ts",
+    "migrate": "tsx src/db/migrate.ts",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "lint": "eslint src tests --ext .ts",
+    "exemplo": "tsx scripts/exemplo.ts",
+    "seed": "tsx scripts/seed.ts",
+    "retencao": "tsx -e \"import('./src/fila/retencao').then(m=>m.executarRetencao()).then(r=>{console.log(r);process.exit(0)})\""
+  },
+  "dependencies": {
+    "bullmq": "^5.12.4",
+    "fast-xml-parser": "^5.11.1",
+    "fastify": "^5.12.4",
+    "pdf-lib": "^1.17.1",
+    "pg": "^8.13.1",
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "@types/pg": "^8.11.10",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.8"
+  }
+}

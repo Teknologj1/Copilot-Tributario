@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<enviNFe xmlns="http://www.portalfiscal.inf.br/nfe" versao="4.00">
+  <idLote>1</idLote>
+  <NFe>
+    <infNFe Id="NFe35260112345678000195550010000000011000000011" versao="4.00">
+      <ide><cUF>35</cUF><natOp>VENDA</natOp><mod>55</mod><serie>1</serie><nNF>1</nNF>
+        <dhEmi>2026-01-15T10:00:00-03:00</dhEmi><tpNF>1</tpNF></ide>
+      <emit><CNPJ>12345678000195</CNPJ><xNome>PADARIA MODELO LTDA</xNome>
+        <enderEmit><UF>SP</UF></enderEmit><CRT>1</CRT></emit>
+      <dest><CNPJ>98765432000198</CNPJ><xNome>MERCADO CLIENTE SA</xNome></dest>
+      <det nItem="1"><prod><CFOP>5102</CFOP><vProd>60000.00</vProd></prod></det>
+      <total><ICMSTot><vProd>60000.00</vProd><vNF>60000.00</vNF></ICMSTot></total>
+    </infNFe>
+  </NFe>
+  <NFe>
+    <infNFe Id="NFe35260112345678000195550010000000021000000021" versao="4.00">
+      <ide><cUF>35</cUF><natOp>VENDA</natOp><mod>55</mod><serie>1</serie><nNF>2</nNF>
+        <dhEmi>2026-01-20T14:30:00-03:00</dhEmi><tpNF>1</tpNF></ide>
+      <emit><CNPJ>12345678000195</CNPJ><xNome>PADARIA MODELO LTDA</xNome>
+        <enderEmit><UF>SP</UF></enderEmit><CRT>1</CRT></emit>
+      <dest><CPF>11144477735</CPF><xNome>CONSUMIDOR FINAL</xNome></dest>
+      <det nItem="1"><prod><CFOP>5102</CFOP><vProd>40000.00</vProd></prod></det>
+      <total><ICMSTot><vProd>40000.00</vProd><vNF>40000.00</vNF></ICMSTot></total>
+    </infNFe>
+  </NFe>
+  <NFe>
+    <infNFe Id="NFe35260212345678000195550010000000031000000031" versao="4.00">
+      <ide><cUF>35</cUF><natOp>DEVOLUCAO</natOp><mod>55</mod><serie>1</serie><nNF>3</nNF>
+        <dhEmi>2026-02-03T09:00:00-03:00</dhEmi><tpNF>0</tpNF></ide>
+      <emit><CNPJ>12345678000195</CNPJ><xNome>PADARIA MODELO LTDA</xNome>
+        <enderEmit><UF>SP</UF></enderEmit><CRT>1</CRT></emit>
+      <dest><CNPJ>98765432000198</CNPJ><xNome>MERCADO CLIENTE SA</xNome></dest>
+      <det nItem="1"><prod><CFOP>1202</CFOP><vProd>5000.00</vProd></prod></det>
+      <total><ICMSTot><vProd>5000.00</vProd><vNF>5000.00</vNF></ICMSTot></total>
+    </infNFe>
+  </NFe>
+  <NFe>
+    <infNFe Id="NFe35260212345678000195550010000000041000000041" versao="4.00">
+      <ide><cUF>35</cUF><natOp>VENDA</natOp><mod>55</mod><serie>1</serie><nNF>4</nNF>
+        <dhEmi>2026-02-18T11:00:00-03:00</dhEmi><tpNF>1</tpNF></ide>
+      <emit><CNPJ>12345678000195</CNPJ><xNome>PADARIA MODELO LTDA</xNome>
+        <enderEmit><UF>SP</UF></enderEmit><CRT>1</CRT></emit>
+      <dest><CNPJ>98765432000198</CNPJ><xNome>MERCADO CLIENTE SA</xNome></dest>
+      <det nItem="1"><prod><CFOP>5102</CFOP><vProd>50000.00</vProd></prod></det>
+      <total><ICMSTot><vProd>50000.00</vProd><vNF>50000.00</vNF></ICMSTot></total>
+    </infNFe>
+  </NFe>
+</enviNFe>

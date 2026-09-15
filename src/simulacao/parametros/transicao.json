@@ -1,0 +1,121 @@
+{
+  "_leia_antes_de_editar": "Este arquivo concentra TODOS os numeros fiscais do motor de simulacao. O codigo (motor.ts) nao tem aliquota escrita em lugar nenhum. A revisao do contador/tributarista exigida pela secao 6 acontece AQUI e nas formulas de motor.ts — nao no resto do sistema. Todo campo tem _status e _fonte.",
+  "versaoParametros": "0.1.0-nao-validado",
+  "atualizadoEm": "2026-09-14",
+  "revisadoPor": null,
+  "revisadoEm": null,
+
+  "tabelasSimples": {
+    "_status": "fonte_publica_nao_revisada",
+    "_fonte": "LC 123/2006, Anexos I a V (valores nominais das tabelas). Conferir vigencia e eventuais alteracoes da LC 214/2025 antes de usar em producao.",
+    "_formulaAliquotaEfetiva": "(RBT12 * aliquotaNominal - parcelaDeduzir) / RBT12",
+    "anexos": {
+      "I": { "descricao": "Comercio", "faixas": [
+        { "ate": 180000, "aliquota": 0.04, "deduzir": 0 },
+        { "ate": 360000, "aliquota": 0.073, "deduzir": 5940 },
+        { "ate": 720000, "aliquota": 0.095, "deduzir": 13860 },
+        { "ate": 1800000, "aliquota": 0.107, "deduzir": 22500 },
+        { "ate": 3600000, "aliquota": 0.143, "deduzir": 87300 },
+        { "ate": 4800000, "aliquota": 0.19, "deduzir": 378000 }
+      ]},
+      "II": { "descricao": "Industria", "faixas": [
+        { "ate": 180000, "aliquota": 0.045, "deduzir": 0 },
+        { "ate": 360000, "aliquota": 0.078, "deduzir": 5940 },
+        { "ate": 720000, "aliquota": 0.10, "deduzir": 13860 },
+        { "ate": 1800000, "aliquota": 0.112, "deduzir": 22500 },
+        { "ate": 3600000, "aliquota": 0.147, "deduzir": 85500 },
+        { "ate": 4800000, "aliquota": 0.30, "deduzir": 720000 }
+      ]},
+      "III": { "descricao": "Servicos (Fator R >= 28%)", "faixas": [
+        { "ate": 180000, "aliquota": 0.06, "deduzir": 0 },
+        { "ate": 360000, "aliquota": 0.112, "deduzir": 9360 },
+        { "ate": 720000, "aliquota": 0.135, "deduzir": 17640 },
+        { "ate": 1800000, "aliquota": 0.16, "deduzir": 35640 },
+        { "ate": 3600000, "aliquota": 0.21, "deduzir": 125640 },
+        { "ate": 4800000, "aliquota": 0.33, "deduzir": 648000 }
+      ]},
+      "IV": { "descricao": "Servicos (construcao, advocacia, vigilancia)", "faixas": [
+        { "ate": 180000, "aliquota": 0.045, "deduzir": 0 },
+        { "ate": 360000, "aliquota": 0.09, "deduzir": 8100 },
+        { "ate": 720000, "aliquota": 0.102, "deduzir": 12420 },
+        { "ate": 1800000, "aliquota": 0.14, "deduzir": 39780 },
+        { "ate": 3600000, "aliquota": 0.22, "deduzir": 183780 },
+        { "ate": 4800000, "aliquota": 0.33, "deduzir": 828000 }
+      ]},
+      "V": { "descricao": "Servicos (Fator R < 28%)", "faixas": [
+        { "ate": 180000, "aliquota": 0.155, "deduzir": 0 },
+        { "ate": 360000, "aliquota": 0.18, "deduzir": 4500 },
+        { "ate": 720000, "aliquota": 0.195, "deduzir": 9900 },
+        { "ate": 1800000, "aliquota": 0.205, "deduzir": 17100 },
+        { "ate": 3600000, "aliquota": 0.23, "deduzir": 62100 },
+        { "ate": 4800000, "aliquota": 0.305, "deduzir": 540000 }
+      ]}
+    },
+    "fatorR": {
+      "_status": "fonte_publica_nao_revisada",
+      "limite": 0.28,
+      "descricao": "folha 12m / receita bruta 12m. >= 28% tributa pelo Anexo III; abaixo, pelo Anexo V.",
+      "aplicaAosAnexos": ["III", "V"]
+    },
+    "limiteReceitaBrutaAnual": 4800000
+  },
+
+  "transicaoIbsCbs": {
+    "_status": "NAO_VALIDADO",
+    "_fonte": "Calendario estrutural da LC 214/2025. CONFERIR cada percentual com a Resolucao CGSN n. 186/2026 e com a redacao vigente antes de producao.",
+    "_atencao": "Os percentuais de 'parcelaTributosAntigos' e as aliquotas de referencia sao os pontos de maior risco do sistema inteiro. Nao use em producao sem revisao.",
+    "anos": {
+      "2026": { "cbs": 0.009, "ibs": 0.001, "parcelaTributosAntigos": 1.0, "nota": "ano-teste; recolhimento compensavel" },
+      "2027": { "cbs": 0.087, "ibs": 0.001, "parcelaTributosAntigos": 0.70, "nota": "CBS integral, PIS/COFINS extintos, IPI zerado (exceto ZFM)" },
+      "2028": { "cbs": 0.087, "ibs": 0.001, "parcelaTributosAntigos": 0.70, "nota": "mesma configuracao de 2027" },
+      "2029": { "cbs": 0.087, "ibs": 0.0177, "parcelaTributosAntigos": 0.63, "nota": "inicio da reducao gradual de ICMS/ISS (90%)" },
+      "2030": { "cbs": 0.087, "ibs": 0.0354, "parcelaTributosAntigos": 0.56, "nota": "ICMS/ISS a 80%" },
+      "2031": { "cbs": 0.087, "ibs": 0.0531, "parcelaTributosAntigos": 0.49, "nota": "ICMS/ISS a 70%" },
+      "2032": { "cbs": 0.087, "ibs": 0.0708, "parcelaTributosAntigos": 0.42, "nota": "ICMS/ISS a 60%" },
+      "2033": { "cbs": 0.087, "ibs": 0.177, "parcelaTributosAntigos": 0.0, "nota": "regime integral IBS/CBS" }
+    }
+  },
+
+  "regimeRegular": {
+    "_status": "NAO_VALIDADO",
+    "_fonte": "Proxy de Lucro Presumido. Substituir pelas regras reais apos revisao profissional.",
+    "_atencao": "Presuncao, aliquotas de IRPJ/CSLL e base de calculo variam por atividade. Estes numeros sao PLACEHOLDER de estrutura, nao recomendacao fiscal.",
+    "lucroPresumido": {
+      "presuncaoComercio": 0.08,
+      "presuncaoIndustria": 0.08,
+      "presuncaoServicos": 0.32,
+      "irpj": 0.15,
+      "irpjAdicional": 0.10,
+      "irpjLimiteAdicionalAnual": 240000,
+      "csll": 0.09,
+      "csllPresuncaoComercio": 0.12,
+      "csllPresuncaoServicos": 0.32
+    },
+    "cppPatronalSobreFolha": 0.268,
+    "_cppNota": "INSS patronal 20% + RAT + terceiros. Fora do Simples a folha volta a ser tributada — item relevante e frequentemente esquecido na comparacao."
+  },
+
+  "creditamento": {
+    "_status": "NAO_VALIDADO",
+    "_fonte": "Regras de credito de IBS/CBS para clientes de optantes do Simples — LC 214/2025 e Resolucao CGSN 186/2026.",
+    "_atencao": "ESTE e o coracao da decisao dentro/fora do DAS para empresa com clientela B2B. Exige revisao especializada.",
+    "creditoTransferidoDentroDAS": 0.0,
+    "_creditoTransferidoDentroDASNota": "Fracao do IBS/CBS que o CLIENTE B2B consegue aproveitar quando compra de optante do Simples que recolhe dentro do DAS. Valor 0 e conservador e quase certamente errado — a lei preve aproveitamento limitado. CORRIGIR NA REVISAO.",
+    "creditoTransferidoForaDAS": 1.0,
+    "_creditoTransferidoForaDASNota": "Fora do DAS o cliente aproveita o credito cheio destacado na nota.",
+    "impactoComercialB2B": {
+      "_status": "NAO_VALIDADO",
+      "_descricao": "Quanto da desvantagem de credito o mercado devolve como pressao de preco. Modelado como repasse do credito perdido sobre a parcela B2B do faturamento.",
+      "fatorRepasse": 0.5,
+      "_fatorRepasseNota": "0.5 = a empresa absorve metade da perda de credito do cliente via desconto. Premissa COMERCIAL, nao fiscal; deve ser discutida com o escritorio."
+    }
+  },
+
+  "mapaAnexoParaAtividade": {
+    "I": "comercio",
+    "II": "industria",
+    "III": "servicos",
+    "IV": "servicos",
+    "V": "servicos"
+  }
+}
